@@ -1,0 +1,171 @@
+/* .form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.error{
+    color: red;
+    font-size: 0.8rem;
+} */
+
+
+
+/* register.module.css */
+
+/* Overall page container */
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #1F1F23;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  /* Form styling */
+  .form {
+    background-color: #1F1F23;
+    padding: 2rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 21%;
+  }
+
+
+  
+  .form input {
+    width: 100%;
+    padding: 18px 40px;
+    margin: 8px -13px;
+    border: 1px solid #D0D0D0;
+    border-radius: 12px;
+    background-color: #1F1F23;
+    color: white;
+    
+  }
+  
+  .form input::placeholder {
+    color: #636364;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 21px;
+    position: absolute;
+    left: 10%;
+  }
+  
+  .registerBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 108%;
+    height: 58px;
+    padding: 8px 10px;
+    background-color: #1A5FFF;
+    font-family: 'Open Sans', sans-serif;
+    color: #ffffff;
+    border: none;
+    border-radius: 29px;
+    font-size: 20px;
+    line-height: 21px;
+    font-weight: 500;
+    cursor: pointer;
+    margin: 35px 0;
+  }
+
+
+  
+  
+
+  
+  /* Error message styling */
+  .error {
+    color: #522224;
+    font-size: 14px;
+    margin-top: -12px;
+    margin-left: -229px;
+  }
+
+
+  
+  /* Input with error state */
+  .errorInput {
+    border: 2px solid red !important;
+  }
+  
+  
+  /* Label with error state */
+  .errorLabel {
+    color: red;
+  }
+  
+  
+
+  
+
+  /* Input Container */
+/* Input Container */
+.inputContainer {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+    padding: 10px 15px;
+  }
+  
+  /* Input Field */
+  .inputWithIcon {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    padding-left: 50px; /* Add space for the left icon */
+    padding-right: 50px; /* Add space for the right icon */
+    text-indent: 10px;
+  }
+  
+  /* Placeholder Styling */
+  .inputWithIcon::placeholder {
+    color: #636364;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    text-align: center; /* Horizontally center the placeholder */
+  }
+  
+  /* Left Icon (inputIcon) */
+  .inputIcon {
+    position: absolute;
+    left: 15px;
+    width: 33px;
+    height: 33px;
+  }
+  
+  /* Right Icon (inputIcon2) */
+  .inputIcon2 {
+    position: absolute;
+    right: 15px;
+    width: 33px;
+    height: 33px;
+  }
+  
+
+  .imageLogout{
+    position: absolute;
+    left: 55px;
+    bottom: 55px;
+    cursor: pointer;
+  }
+
+  

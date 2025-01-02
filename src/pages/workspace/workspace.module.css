@@ -1,0 +1,843 @@
+
+/* .workspace {
+    background: 
+    linear-gradient(0deg, #121212, #121212),
+    linear-gradient(0deg, #18181B, #18181B);
+    background-blend-mode: overlay;
+    color: #ffffff;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+.workspace[data-theme="dark"] {
+  --workspace-background-color: #ffffff;
+  --workspace-text-color: #000000;
+}
+   */
+
+
+   /* Define default light mode styles */
+   :root {
+    --workspace-background-color: #121212;
+    --workspace-text-color: #ffffff;
+    --header-actions-bg: rgba(0, 0, 0, 0.9);
+    --dropdown-bg: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    --dropdown-item-bg-hover: #41415a;
+    /* --modal-bg: rgba(0, 0, 0, 0.6); */
+    --modal-bg: #18181B;
+    --modal-input: rgba(31, 31, 35, 1);
+    --modal-content-bg: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    --button-bg: rgba(255, 255, 255, 0.08);
+    --button-text-color: rgba(255, 255, 255, 0.92);
+    --button-bg-hover: #005ec4;
+    --button-color: #005ec4;
+    --form-item-bg: rgba(255, 255, 255, 0.5);
+    --create-form-bg: rgba(26, 95, 255, 1);
+    --separator-bg: #444;
+    --done-color: #005ec4;
+  }
+  
+  :root[data-theme="light"] {
+    --workspace-background-color: #ffffff;
+    --workspace-text-color: #121212;
+    /* --header-actions-bg: rgba(240, 240, 240, 0.9); */
+    --header-actions-bg: #ffffff;
+    --dropdown-bg: #ffffff;
+    --dropdown-item-bg-hover: #dddddd;
+    --modal-bg: #ffffff;
+    --modal-input: #ffffff;
+    --modal-content-bg: #f5f5f5;
+    --button-bg: rgba(0, 0, 0, 0.08);
+    --button-text-color: rgba(0, 0, 0, 0.92);
+    --button-bg-hover: #005ec4;
+    --button-color: #121212;
+    --form-item-bg: rgba(0, 0, 0, 0.5);
+    --create-form-bg: rgba(0, 102, 204, 1);
+    --separator-bg: #ddd;
+  }
+
+/* Apply variables to the workspace */
+.workspace {
+  background-color: var(--workspace-background-color);
+  color: var(--workspace-text-color);
+  min-height: 100vh;
+  padding: 20px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+  .workspace h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+  }
+  
+  /* Header styling */
+
+
+   .usernameDropdown {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.headerActions {
+  background-color: var(--header-actions-bg);
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.shareButton {
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: -85px;
+}
+
+.dropdownButton {
+    width: 304px;
+    /* color: white; */
+    /* border: none; */
+    /* border: 1px solid #444; */
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    position: relative; 
+    background-color: var(--dropdown-bg);
+    color: var(--button-text-color);
+    border: 1px solid var(--separator-bg);
+}
+
+
+
+.dropdown {
+    position: relative;
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    /* background: 
+    linear-gradient(0deg, #121212, #121212),
+    linear-gradient(0deg, #18181B, #18181B);
+    background-blend-mode: overlay; */
+    background: var(--dropdown-bg);
+  color: var(--workspace-text-color);
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    width: 314px; 
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4); */
+    z-index: 1000;
+    transition: background-color 0.3s ease; 
+}
+
+.dropdownMenu.open {
+  background-color: var(--dropdown-bg);
+    color: var(--button-text-color);
+    border: 1px solid var(--separator-bg);
+}
+
+.dropdownItem {
+    padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: var(--workspace-text-color);
+    border-radius: 4px;
+    
+    
+}
+
+.dropdownItemLogout{
+  padding: 8px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #FFA54C;
+    border-radius: 4px;
+}
+
+.sharedUsers ul {
+  list-style-type: none; 
+  padding: 0;
+  margin: 0; 
+}
+
+.sharedUsers li {
+  cursor: pointer;
+    color: var(--workspace-text-color);
+    padding: 12px 16px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: -8px;
+    margin-top: -5px;
+    margin-left: -48px;
+    list-style: none;
+    
+}
+
+.selectWrapper{
+  position: absolute;
+  top: 34%;
+  right: 36%;
+  
+  
+}
+
+.selectWrapper select{
+  background-color: var(--modal-bg);
+  color: var(--workspace-text-color);
+  border: none;
+  cursor: pointer;
+}
+
+.selectWrapper select option{
+  background-color: var(--modal-bg);
+  color: var(--workspace-text-color);
+  border: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+
+.separator {
+    border: none;
+    height: 0.5px;
+    background-color: var(--separator-bg); 
+    margin: 8px -10px; 
+  }
+
+  .separatorShareUser{
+    border: none;
+    height: 0.5px;
+    background-color: var(--separator-bg);
+    margin: 8px -18px;
+    margin-right: -25px;
+  }
+
+  .separator1{
+    border: none;
+    height: 0.5px;
+    /* background-color: #444;  */
+    background-color: var(--separator-bg); 
+    margin: 8px -20px; 
+  }
+  
+
+  
+
+  
+  /* Folder and Form Buttons */
+  .createFolderButton {
+    margin-left: 100px;
+    margin-top: 75px;
+    /* background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.92); */
+    background-color: var(--button-bg);
+  color: var(--button-text-color);
+    border: 1px solid var(--separator-bg);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 171px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .createFolderButton img{
+    width: 16px;
+    color: var(--button-text-color);
+  }
+  
+
+  
+  
+
+  
+  /* Modal Styling */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: var(--workspace-background-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  .modalDelete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* background-color: var(--workspace-background-color);
+  color: var(--workspace-text-color); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    /* background: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    background-blend-mode: overlay; */
+    background-color: var(--modal-bg);
+    color: var(--workspace-text-color);
+    color: white;
+    padding: 20px;
+    border-radius: 21px;
+    border: 1px solid #444;
+    width: 540px;
+    text-align: center;
+  }
+
+  .modalContentShare{
+    /* background: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    background-blend-mode: overlay; */
+    background-color: var(--modal-bg);
+    color: var(--workspace-text-color);
+    color: white;
+    padding: 20px;
+    border-radius: 21px;
+    border: 1px solid #444;
+    width: 540px;
+    text-align: center;
+  }
+
+  /* for asking delete modal */
+
+  .modalContentDelete {
+    /* background: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    background-blend-mode: overlay; */
+    background-color: var(--modal-bg);
+    /* background-color: var(--workspace-background-color); */
+  /* color: var(--workspace-text-color); */
+  color: white;
+    padding: 20px;
+    border-radius: 21px;
+    border: 1px solid #444;
+    width: 443px;
+    text-align: center;
+  }
+  
+  .modalContent h3 {
+    /* color: white; */
+    color: var(--workspace-text-color);
+    font-size: 25.33px;
+    font-weight: 600;
+    line-height: 41px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: -191px;
+    margin-bottom: 20px;
+  }
+
+  .modalContentShare h3{
+    color: var(--workspace-text-color);
+    font-size: 25.33px;
+    font-weight: 500;
+    line-height: 41px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: -358px;
+    margin-bottom: 20px;
+  }
+
+  .modalContentShare img{
+    margin-left: 96%;
+    width: 14px;
+    cursor: pointer;
+  }
+
+  .modalContentDelete h3{
+    /* color: white; */
+    color: var(--workspace-text-color);
+    width: 67%;
+    font-size: 26.33px;
+    font-weight: 500;
+    line-height: 41px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 72px;
+    margin-bottom: 20px;
+  }
+
+
+  
+  .modalContent input {
+    width: 70%;
+    padding: 17px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #555;
+    /* background-color: rgba(31, 31, 35, 1);
+    color: white; */
+    background-color: var(--modal-input);
+    color: var(--workspace-text-color);
+  }
+
+  .modalContent input :placeholder-shown{
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 41px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .modalContentShare input{
+    width: 93%;
+    padding: 17px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 1px solid #555;
+    /* background-color: rgba(31, 31, 35, 1);
+    color: white; */
+    background-color: var(--modal-input);
+    color: var(--workspace-text-color);
+  }
+  
+
+  .modalContentShare input:placeholder-shown{
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 41px;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  .shareEmailButton{
+    background-color: #1A5FFF;
+    color: #ffffff;
+    border: 1px solid var(--separator-bg);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+  .copyEmailButton{
+    background-color: #1A5FFF;
+    color: #ffffff;
+    border: 1px solid var(--separator-bg);
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .handleCreateFolder {
+     /* background: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    background-blend-mode: overlay; */
+    color: rgba(75, 131, 255, 1); 
+    background-color: var(--dropdown-bg);
+  /* color: var( --button-color); */
+    border: none;
+    
+    cursor: pointer;
+    font-size: 22.33px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 41px;
+    font-weight: 500;
+    margin: 0px 9px;
+    margin-right: 100px;
+  }
+  
+  .folderCancelButton{
+    /* background: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B); */
+    background-color: var(--dropdown-bg);
+    background-blend-mode: overlay;
+    color: var(--workspace-text-color);
+    border: none;
+    
+    cursor: pointer;
+    font-size: 22.33px;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 41px;
+    font-weight: 500;
+    margin: 0px 9px;
+  }
+
+  
+
+ 
+
+
+
+
+
+
+  .foldersList {
+    margin-top: -65px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 18%;
+    position: relative;
+  }
+
+  .SharedfoldersList{
+    margin-top: -65px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-left: 18%;
+    position: relative;
+  }
+
+  .folderWrapper {
+    position: relative; /* Each folder serves as a reference for absolute positioning of forms */
+  }
+  
+
+  .sharedfolderWrapper{
+    position: relative;
+  }
+
+  .folderItem {
+    /* background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08); */
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+      border: 1px solid var(--separator-bg);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 171px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .sharedFolderItem{
+    /* background-color: rgba(255, 255, 255, 0.08);
+    color: rgba(255, 255, 255, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08); */
+    background-color: var(--button-bg);
+    color: var(--button-text-color);
+      border: 1px solid var(--separator-bg);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 171px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 23px;
+  }
+  
+
+  
+  .folderItem.active {
+    background-color: #ffffff;
+    color: rgba(24, 24, 27, 1); /* Active text color */
+    font-family: "Open Sans", sans-serif; /* Font Family */
+    font-weight: 600; /* Font Weight */
+    font-size: 16px; /* Font Size */
+    line-height: 19.2px; /* Line Height */
+    text-align: center; /* Text Align */
+  }
+
+  .deleteFolderButton{
+    display: absolute;
+  }
+  
+
+
+
+   .formsContainer {
+    position: absolute; /* Position the forms relative to the folder */
+    top: 86%; /* Position forms below the folder */
+    left: 28px;
+    background-color: rgba(0, 0, 0, 0.9); /* Slightly transparent background */
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 1000; /* Ensure it appears on top */
+    width: max-content; /* Ensure it doesn’t stretch unnecessarily */
+  }
+
+  .shareForms{
+    
+    /* background-color: rgba(0, 0, 0, 0.9); Slightly transparent background */
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    z-index: 1000; /* Ensure it appears on top */
+    width: max-content; 
+    margin-left: 17.5%;
+  }
+
+
+
+  .formsDisplay {
+    margin-top: 31px;
+    margin-left: 20%; /* Align with folder list */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+
+  
+
+
+  .formItem {
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    background-color: var(--form-item-bg);
+    border: 1px solid var(--separator-bg);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+   
+    height: 268px;
+    width: 225px;
+    text-align: center; 
+    position: relative;
+  }
+
+  .formItem img {
+    margin-top: 20px;
+    position: absolute;
+    top: -11%;
+    left: 94%;
+   
+  }
+
+  .shareFormItem{
+    background-color: var(--form-item-bg);
+    border: 1px solid var(--separator-bg);
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px; 
+   
+    height: 268px;
+    width: 225px;
+    text-align: center; 
+    position: relative;
+  }
+
+  
+  .shareFormItem img {
+    margin-top: 20px;
+    position: absolute;
+    top: -11%;
+    left: 94%;
+   
+  }
+
+
+  
+  .formLink {
+    cursor: pointer;
+    color: rgba(255, 255, 255, 1);
+  }
+  
+ 
+  
+
+
+  
+
+  /* Create form button */
+
+
+
+
+  .createFormButton {
+    background-color: rgba(26, 95, 255, 1);
+    position: absolute;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Spacing between image and text */
+    top: 118%;
+    left: -241px;
+    height: 268px;
+    width: 225px;
+    text-align: center; /* Center align text */
+  }
+  
+  .createFormButton img {
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+  }
+  
+  .createFormButton span {
+    margin-top: 39px; /* Add spacing below the image */
+  }
+  
+
+  .shareCreateFormButton{
+    background-color: rgba(26, 95, 255, 1);
+    position: absolute;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.6px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    /* top: 27%; */
+    margin-left: 59px;
+    /* left: 81px; */
+    height: 268px;
+    width: 225px;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .shareCreateFormButton img{
+    width: 40px;
+    height: 40px;
+    margin-top: 20px;
+  }
+
+  .shareCreateFormButton span{
+    margin-top: 39px;
+  }
+
+
+  
+/* Base styles for toggle button */
+.themeTextDark{
+  position: absolute;
+  top: 46px;
+  left: 81%;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.themeTextLight{
+  position: absolute;
+  top: 46px;
+  right: 430px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+
+
+
+.toggleBtn {
+  background-color: #1A5FFF;
+  border: 1px solid #b7b9ba;
+  border-radius: 99px;
+  width: 50px;
+  height: 28px;
+  cursor: pointer;
+  transition: background-color 0.1s ease, border-color 0.2s ease;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.748);
+  position: absolute;
+  top: 4.5%;
+  left: 78%;
+}
+
+.toggleBtn .thumb {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border-radius: 99px;
+  position: absolute;
+  top: 50%;
+  left: calc(100% - 23px); /* Default to the right side */
+  transform: translateY(-50%);
+  transition: left 0.15s ease;
+}
+
+.toggleBtn.toggle .thumb {
+  left: 3px; /* Moves to the left side when toggled */
+}
+
+.toggleBtn.toggle {
+  background-color: #b7b9ba;
+}
+
+

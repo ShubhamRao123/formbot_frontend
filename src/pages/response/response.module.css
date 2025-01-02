@@ -1,0 +1,350 @@
+:root {
+    --workspace-background-color: #18181B;
+    --workspace-text-color: #ffffff;
+    --header-actions-bg: rgba(0, 0, 0, 0.9);
+    --dropdown-bg: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    --dropdown-item-bg-hover: #41415a;
+    /* --modal-bg: rgba(0, 0, 0, 0.6); */
+    --modal-bg: #18181B;
+    --modal-input: rgba(31, 31, 35, 1);
+    --modal-content-bg: linear-gradient(0deg, #121212, #121212), linear-gradient(0deg, #18181B, #18181B);
+    --button-bg: rgba(255, 255, 255, 0.08);
+    --button-text-color: rgba(255, 255, 255, 0.92);
+    --button-bg-hover: #005ec4;
+    --button-color: #005ec4;
+    --form-item-bg: rgba(255, 255, 255, 0.5);
+    --create-form-bg: rgba(26, 95, 255, 1);
+    --separator-bg: #444;
+    --done-color: #005ec4;
+  
+    --left-panel-bg: #18181B;
+    --right-panel-bg: #1F1F23;
+    --workspace-bg: #1F1F23;
+    --border-color: #404040;
+    --left-panel-button-bg: #1F1F23;
+    --left-panel-button-border: #27272A;
+    --flag-color: #ffffff;
+  
+    --form-start-border: #18181B;
+    --button-text-color: #979797;
+    --stats-bg: #323232;
+  }
+  
+  :root[data-theme="light"] {
+    --workspace-background-color: #ffffff;
+    --workspace-text-color: #121212;
+    /* --header-actions-bg: rgba(240, 240, 240, 0.9); */
+    --header-actions-bg: #ffffff;
+    --dropdown-bg: #ffffff;
+    --dropdown-item-bg-hover: #dddddd;
+    --modal-bg: #ffffff;
+    --modal-input: #ffffff;
+    --modal-content-bg: #f5f5f5;
+    --button-bg: rgba(0, 0, 0, 0.08);
+    --button-text-color: rgba(0, 0, 0, 0.92);
+    --button-bg-hover: #005ec4;
+    --button-color: #121212;
+    --form-item-bg: rgba(0, 0, 0, 0.5);
+    --create-form-bg: rgba(0, 102, 204, 1);
+    --separator-bg: #ddd;
+    --left-panel-bg: #ffffff;
+    --right-panel-bg: #ffffff;
+    --workspace-bg: #ffffff;
+    --border-color: #ddd;
+    --left-panel-button-bg: #ffffff;
+    --left-panel-button-border: #D6D6D6;
+    --flag-color:#1A5FFF;
+    --form-start-border: #D6D6D6;
+    --button-text-color: #707070;
+    --stats-bg: #D6D6D6;
+  }
+  
+  .container {
+    background-color: var(--workspace-background-color);
+    color: var(--workspace-text-color);
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .header{
+    background-color: var(--workspace-background-color);
+    color: var(--workspace-text-color);
+    /* border-bottom: 2px solid var(--border-color); */
+    display: flex;
+    align-items: center;
+    height: 61px;
+  }
+  
+  .header h1{
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 90px;
+  }
+  
+  .headerButtonResponse{
+    position: absolute;
+    right: 42%;
+    top: 23px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: var(--workspace-background-color);
+    color: rgba(126, 166, 255, 1);
+    border: 1px solid rgba(126, 166, 255, 1);
+    line-height: 16.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 14px;
+  }
+  
+  .headerButtonFlow{
+    position: absolute;
+    right: 48%;
+    top: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    background-color: var(--workspace-background-color);
+    color: var(--workspace-text-color);
+    line-height: 16.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px 14px;
+  }
+  
+  .headerButtonSave{
+    position: absolute;
+    right: 123px;
+    top: 23px;
+    width: 70px;
+    height: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(74, 222, 128, 0.8);
+    border-radius: 4px;
+    background-color: rgba(74, 222, 128, 0.8);
+    color: #ffffff;
+    line-height: 16.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .headerButtonShare{
+    position: absolute;
+    right: 210px;
+    top: 23px;
+    width: 70px;
+    height: 25px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid #1A5FFF;
+    border-radius: 4px;
+    background-color: #1A5FFF;
+    color: #ffffff;
+    line-height: 16.8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+  }
+  .headerButtonCancel{
+    position: absolute;
+    right: 88px;
+    cursor: pointer;
+    top: 41px;
+  }
+  
+  
+  
+  .separator1{
+    border: none;
+    height: 1px;
+    /* background-color: #444;  */
+    background-color: var(--separator-bg); 
+    margin: 0px -20px; 
+  }
+
+  .stats{
+    display: flex;
+    margin-top: 20px;
+    gap: 100px;
+    margin-left: 44%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .stats1{
+    background-color: var(--stats-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 35px;
+    height: 140px;
+    border-radius: 16px;
+    margin-top: 35px;
+  }
+
+  .stats2{
+    background-color: var(--stats-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 35px;
+    height: 140px;
+    border-radius: 16px;
+    margin-top: 35px;
+  }
+
+
+  .completionRate{
+    background-color: var(--stats-bg);
+    margin-left: -30%;
+    margin-right: 20%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0px 82px;
+    height: 140px;
+    border-radius: 16px;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+  }
+
+  .PieChart{
+    width: 20%;
+    margin: 0 auto;
+  }
+
+  .footer{
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .responseSection p{
+    font-family: 'Inter', sans-serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 43.57px;
+  color: #69696973;
+  width: 50%;
+  margin-left: 42%;
+  margin-top: 18%;
+}
+  
+/* General table styling */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    margin-top: 90px;
+  }
+  
+  /* Styling for table headers */
+  .table th {
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    /* background-color: #f4f4f4; */
+    text-align: left;
+  }
+  
+  /* Styling for table rows */
+  .table td {
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    vertical-align: top;
+  }
+
+  
+
+  
+  /* Styling for unordered list inside data column */
+  .dataList {
+    margin: 0;
+    padding-left: 15px;
+    list-style: none;
+  }
+  
+  /* Styling for list items inside the Data column */
+  .dataList li {
+    margin-bottom: 5px;
+  }
+  
+  .dataList strong {
+    color: #333;
+  }
+  
+
+
+
+  /* Base styles for toggle button */
+.themeTextDark{
+    position: absolute;
+    top: 46px;
+    left: 81%;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  
+  .themeTextLight{
+    position: absolute;
+    top: 46px;
+    right: 430px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  .toggleBtn {
+    background-color: #1A5FFF;
+    border: 1px solid #b7b9ba;
+    border-radius: 99px;
+    width: 50px;
+    height: 28px;
+    cursor: pointer;
+    transition: background-color 0.1s ease, border-color 0.2s ease;
+    box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.748);
+    position: absolute;
+    top: 4.5%;
+    left: 78%;
+  }
+  
+  .toggleBtn .thumb {
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 99px;
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 23px); /* Default to the right side */
+    transform: translateY(-50%);
+    transition: left 0.15s ease;
+  }
+  
+  .toggleBtn.toggle .thumb {
+    left: 3px; /* Moves to the left side when toggled */
+  }
+  
+  .toggleBtn.toggle {
+    background-color: #b7b9ba;
+  }
+  

@@ -1,0 +1,306 @@
+/* General styles */
+/* :root {
+    --primary-color: #4a00e0;
+    --secondary-color: #8e2de2;
+    --text-color: #ffffff;
+    --background-color: #121212; 
+    --button-hover-color: #6f00e0;
+  } */
+  
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* background: 
+      linear-gradient(0deg, #121212, #121212),
+      linear-gradient(0deg, #171923, #171923),
+      linear-gradient(0deg, #171923, #171923);
+    background-blend-mode: overlay; */
+  }
+  
+  .container{
+    margin: -19px;
+    background: 
+      linear-gradient(0deg, #121212, #121212),
+      linear-gradient(0deg, #171923, #171923),
+      linear-gradient(0deg, #171923, #171923);
+    background-blend-mode: overlay;
+  }
+
+  /* Header styles */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 88.9%;
+    margin: 0 100px;
+    margin-top: 1%;
+    margin-bottom: 4%;    
+    padding: 1rem 2rem;
+    background: 
+      linear-gradient(0deg, #121212, #121212),
+      linear-gradient(0deg, #171923, #171923),
+      linear-gradient(0deg, #171923, #171923);
+    background-blend-mode: overlay;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+  
+  .navButtons {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid #7EA6FF;
+    color: #7EA6FF;
+    border-radius: 6px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    cursor: pointer;
+    background: 
+      linear-gradient(0deg, #121212, #121212),
+      linear-gradient(0deg, #171923, #171923),
+      linear-gradient(0deg, #171923, #171923);
+    background-blend-mode: overlay;
+}
+
+
+  .navButton1{
+    background-color: #1A5FFF;
+    color: #FFFFFF;
+    border: 1px solid #1A5FFF;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.2px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    cursor: pointer;
+  }
+  
+
+  
+  .createButton {
+    background: var(--primary-color);
+    color: var(--text-color);
+  }
+  
+  /* Hero section styles */
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+ 
+  
+  .heroContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem 0;
+    width: 90%;
+  }
+  
+  .heroSection {
+    max-width: 69.44%;
+    text-align: center;
+    z-index: 2;
+  }
+  
+  .heroTitle {
+    max-width: 84.8%;
+    margin: 0 auto;
+    font-family: "Outfit", sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 86.4px;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    background: linear-gradient(90deg, #4B83FF 0%, #B794F4 100%);
+    background-clip: text; /* Fallback for non-webkit browsers */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Required for gradient text */
+    color: transparent; /* Ensure compatibility */
+    margin-bottom: 1rem;
+  }
+  
+  .heroSubtitle {
+    margin: 0 auto;
+    width: 64%;
+    margin-top: 3%;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    margin-bottom: 2rem;
+    color: #FFFFFFEB;
+  }
+  
+  .ctaButton {
+    font-family: "Open Sans", sans-serif;
+    padding: 1rem 2rem;
+    background: #1A5FFF;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 21.6px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1%;
+  }
+  
+  .heroLeftImage {
+    position: absolute;
+    left: -8%;
+    top: 10%;
+    z-index: 1;
+  }
+  
+  .heroRightImage {
+    position: absolute;
+    right: -7%;
+    top: 10%;
+    z-index: 1;
+  }
+  
+  
+  /* Image section */
+  .imageSection {
+    margin: 0 100px;
+    margin-top: 2rem;
+    width: 100%;
+    margin-bottom: 3%;
+    padding-bottom: 1%;
+  }
+  
+  .heroImage {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Footer styles */
+    .footer {
+    background: 
+      linear-gradient(0deg, #121212, #121212),
+      linear-gradient(0deg, #171923, #171923),
+      linear-gradient(0deg, #171923, #171923);
+    background-blend-mode: overlay;
+    padding: 8rem 1rem;
+    color: #ffffffcb;
+  }
+  
+  .footerContent {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footerBrand {
+    text-align: left;
+    width: 10%;
+  }
+
+  .footerBrand p{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .footerBrand p span{
+    text-decoration: underline;
+  }
+
+  .logo2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25%;
+    gap: 8px;
+    font-family: "Outfit", sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 21.6px;
+    text-align: left;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+}
+
+.logo2 img{
+    width: 30px;
+}
+  
+  .footerSection {
+    text-align: left;
+    width: 12%;
+    margin-top: -18px;
+    color: rgba(255, 255, 255, 0.92);
+    text-decoration: underline;
+    text-decoration-style: solid;
+    text-decoration-skip-ink: none;
+  }
+  
+  .footerSection h4{
+    font-size: 18px;
+    font-weight: 500;
+    font-family: "Outfit", sans-serif;
+    line-height: 21.6px;
+    color: rgba(255, 255, 255, 0.92);
+    
+  }
+  
+  .footerSection p {
+    margin: 0.5rem 0;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+  
+  .footerContent a {
+    color: #ffffffcb;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .footerContent a img{
+    width: 16px;
+  }
+  
+
