@@ -14,9 +14,17 @@ function FormWorkspace() {
   const [theme, setTheme] = useState("light");
   const [toggle, setToggle] = useState(false);
 
+  // const handleShare = () => {
+  //   const shareLink = `${window.location.origin}/form/${folderID}/${formID}`;
+  //   console.log(window.location.origin);
+  //   navigator.clipboard.writeText(shareLink);
+  //   alert(`Link copied to clipboard: ${shareLink}`);
+  // };
+
   const handleShare = () => {
-    const shareLink = `${window.location.origin}/form/${folderID}/${formID}`;
-    console.log(window.location.origin);
+    const protocol = window.location.protocol; // Get the current protocol (http or https)
+    const shareLink = `${protocol}//${window.location.host}/form/${folderID}/${formID}`;
+    console.log(shareLink); // Check if the shareLink is correct
     navigator.clipboard.writeText(shareLink);
     alert(`Link copied to clipboard: ${shareLink}`);
   };
