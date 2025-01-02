@@ -14,10 +14,23 @@ function FormWorkspace() {
   const [theme, setTheme] = useState("light");
   const [toggle, setToggle] = useState(false);
 
+  // const handleShare = () => {
+  //   const shareLink = `${window.location.origin}/form/${folderID}/${formID}`;
+  //   navigator.clipboard.writeText(shareLink);
+  //   alert(`Link copied to clipboard: ${shareLink}`);
+  // };
+
   const handleShare = () => {
-    const shareLink = `${window.location.origin}/form/${folderID}/${formID}`;
-    navigator.clipboard.writeText(shareLink);
-    alert(`Link copied to clipboard: ${shareLink}`);
+    const shareBaseURL = "https://formbot-frontend-three.vercel.app"; // Explicitly set the deployed base URL
+    const shareLink = `${shareBaseURL}/form/${folderID}/${formID}`;
+    navigator.clipboard
+      .writeText(shareLink)
+      .then(() => {
+        alert(`Link copied to clipboard: ${shareLink}`);
+      })
+      .catch((err) => {
+        alert(`Failed to copy link: ${err.message}`);
+      });
   };
 
   const handleDragStart = (e, element) => {
