@@ -16,6 +16,7 @@ function FormWorkspace() {
 
   const handleShare = () => {
     const shareLink = `${window.location.origin}/form/${folderID}/${formID}`;
+    console.log(window.location.origin);
     navigator.clipboard.writeText(shareLink);
     alert(`Link copied to clipboard: ${shareLink}`);
   };
