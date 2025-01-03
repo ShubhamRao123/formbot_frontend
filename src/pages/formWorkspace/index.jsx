@@ -128,6 +128,7 @@ function FormWorkspace() {
             className={styles.headerButtonCancel}
             src="https://res.cloudinary.com/dfrujgo0i/image/upload/v1735383967/close_lfnbsx.png"
             alt=""
+            onClick={() => navigate("/workspace")}
           />
         </div>
         <p
