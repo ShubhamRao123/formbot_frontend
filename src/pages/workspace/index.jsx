@@ -297,6 +297,17 @@ function Workspace() {
     document.documentElement.setAttribute("data-theme", newTheme);
   };
 
+  const handleCopyLink = async () => {
+    const workspaceUrl = `${window.location.origin}/workspace`; // Construct the workspace URL
+    try {
+      await navigator.clipboard.writeText(workspaceUrl);
+      alert("Workspace link copied to clipboard!");
+    } catch (error) {
+      alert("Failed to copy the link. Please try again.");
+      console.error("Error copying link:", error);
+    }
+  };
+
   return (
     <div className={styles.workspace}>
       <header className={styles.workspaceHeader}>
@@ -421,7 +432,12 @@ function Workspace() {
             </div>
             <h3>Invite by Link</h3>
             <div>
-              <button className={styles.copyEmailButton}>Copy Link</button>
+              <button
+                onClick={handleCopyLink}
+                className={styles.copyEmailButton}
+              >
+                Copy Link
+              </button>
             </div>
           </div>
         </div>
